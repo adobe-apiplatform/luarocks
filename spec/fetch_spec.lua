@@ -14,17 +14,6 @@ describe("Luarocks fetch test #unit", function()
       return file1 == file2 or lfs.attributes(file1).ino == lfs.attributes(file2).ino
    end
    
-   describe("fetch.is_basic_protocol", function()
-      it("checks whether the arguments represent a valid protocol and returns the result of the check", function()
-         assert.truthy(fetch.is_basic_protocol("http"))
-         assert.truthy(fetch.is_basic_protocol("https"))
-         assert.truthy(fetch.is_basic_protocol("ftp"))
-         assert.truthy(fetch.is_basic_protocol("file"))
-         assert.falsy(fetch.is_basic_protocol("file", true))
-         assert.falsy(fetch.is_basic_protocol("invalid"))
-      end)
-   end)
-   
    describe("fetch.fetch_url #mock", function()
       setup(function()
          test_env.mock_server_init()
