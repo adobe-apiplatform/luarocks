@@ -48,7 +48,7 @@ end
 -- @return boolean or (nil, string): true if no errors ocurred,
 -- nil and an error message otherwise.
 function builtin.run(rockspec)
-   assert(type(rockspec) == "table")
+   assert(rockspec:type() == "rockspec")
    local compile_object, compile_library, compile_static_library, compile_wrapper_binary --TODO EXEWRAPPER
 
    local build = rockspec.build
